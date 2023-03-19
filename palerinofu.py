@@ -1,12 +1,17 @@
 def result(inp, outp, coded_text, frame='~'):
     print(frame * (len(inp) + 4))  # stringnél a szorzás ismétlést jelent
     print(f'# {inp} #')
-    print(f'# {" " * 16} {"ˇ" * len(coded_text)} #')
+    print(f'# BlackBox Magic > {"ˇ" * len(coded_text)} #')
     print(f'# {outp} #')
     print(frame * (len(inp) + 4))
 
+def tesztelt_szoveg():
+    text=input('Nosza írj be egy tesztelendő szöveget!')
+    palerinofu(text)
 
 def palerinofu(text):
+
+
     code_dict = {
         "p": "a",
         "l": "e",
@@ -24,11 +29,11 @@ def palerinofu(text):
         # print(char)
         for code in code_dict:
             if char == code_dict[code]:
-                # print(f'if {char} == {code_dict[code]} <-ezt # ere-> {code}')
+                # print(f'érték: {char} == {code_dict[code]} <-ezt # ere-> {code}')
                 decode = code
                 break
             elif char == code:
-                # print(f'elif {char} == {code_dict[code]} <-ezt # ere-> {code}')
+                # print(f'kulcs: {char} == {code} <-ezt # ere-> {code_dict[code]}')
                 decode = code_dict[code]
                 break
             else:
@@ -58,4 +63,5 @@ def palerinofu(text):
         exit()
 
 
-palerinofu('mintaszöveg')
+
+tesztelt_szoveg()
