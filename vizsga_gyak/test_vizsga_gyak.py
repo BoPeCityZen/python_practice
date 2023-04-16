@@ -93,7 +93,7 @@ class TestFeladatok(object):
                 transactions.append(Deposit[1])
 
             except:
-                print('LÚf az')
+                print('Upsz...)
 
         # print(transactions)
         return transactions
@@ -207,9 +207,9 @@ class TestFeladatok(object):
         Balance = self.check_balance()
         try:
             assert sum_transactions == int(Balance)
-            print(f'\nEnnyi:{Balance} Nu, csak megvan.')
+            # print(f'\nEnnyi:{Balance}')
         except:
-            print('Mi van a palacsintában?!')
+            print('Upsz...)
 
     # ----------------------------------------------------------------------------------------------------------------------
 
@@ -243,9 +243,9 @@ class TestFeladatok(object):
         try:
             assert (str(Withdrawl[0]) == 'Transaction successful')
             Balance = self.check_balance()
-            print(f'\nEnnyi maradt:{Balance} Ez nem semmi?! De az: 0.')
+            # print(f'\nEnnyi maradt:{Balance} Ez nem semmi?! De az: 0.')
         except:
-            print('Mi van a palacsintában?!')
+            print('Upsz...)
 
     # ----------------------------------------------------------------------------------------------------------------------
 
@@ -287,10 +287,10 @@ class TestFeladatok(object):
         # print(szlakciok[0].text)
 
         for t in range(len(transactions)):
-            print(f'{transactions[t]} Vs. {szlakciok[t + 1].text}')
+            # print(f'{transactions[t]} Vs. {szlakciok[t + 1].text}')
 
             try:
                 assert transactions[t] == int(szlakciok[t + 1].text)
-                print('Megvagy...b+ !')
+                # print('Ohbejó! :)')
             except:
-                print('Lehullik a kúltúra könnyű fátyla, ha beütt a krach...')
+                print('Upsz...')
