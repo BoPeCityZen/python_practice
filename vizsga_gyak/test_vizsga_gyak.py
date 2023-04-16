@@ -35,8 +35,7 @@ class TestFeladatok(object):
             "username": "Ron Weasly",
             "user_id": "3",
             "account_numbers": [1007, 1008, 1009],
-            "transactions": []
-            # Tipp: ezt érdemes lehet a teardown metódusban tisztára pucolni minden esetben -> clear()
+            "transactions": []            
         }
         take_this = TEST_DATA[info]
         return take_this
