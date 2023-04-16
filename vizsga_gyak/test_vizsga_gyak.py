@@ -115,8 +115,8 @@ class TestFeladatok(object):
         self.browser.maximize_window()
 
     def teardown_method(self):
-        pass
-        # self.browser.quit()
+        # pass
+        self.browser.quit()
 
     """
     TC1: Ellenőrizzük a főoldal főbb elemeinek megjelenését
@@ -132,7 +132,7 @@ class TestFeladatok(object):
     def test_case1(self):
         act_str = WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//div[@class="box mainhdr"]/strong'))).text
-        assert act_str
+        assert act_str == 'XYZ Bank'
         home_btn = self.HomeButton()
         assert home_btn.is_enabled
         login_btns = self.Login_btns()
