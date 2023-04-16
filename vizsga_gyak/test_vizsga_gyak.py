@@ -209,7 +209,7 @@ class TestFeladatok(object):
             assert sum_transactions == int(Balance)
             # print(f'\nEnnyi:{Balance}')
         except:
-            print('Upsz...)
+            print('Upsz...')
 
     # ----------------------------------------------------------------------------------------------------------------------
 
@@ -245,7 +245,7 @@ class TestFeladatok(object):
             Balance = self.check_balance()
             # print(f'\nEnnyi maradt:{Balance} Ez nem semmi?! De az: 0.')
         except:
-            print('Upsz...)
+            print('Upsz...')
 
     # ----------------------------------------------------------------------------------------------------------------------
 
