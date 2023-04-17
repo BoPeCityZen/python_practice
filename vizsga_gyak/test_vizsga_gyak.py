@@ -35,8 +35,7 @@ class TestFeladatok(object):
             "username": "Ron Weasly",
             "user_id": "3",
             "account_numbers": [1007, 1008, 1009],
-            "transactions": []
-            # Tipp: ezt érdemes lehet a teardown metódusban tisztára pucolni minden esetben -> clear()
+            "transactions": []            
         }
         take_this = TEST_DATA[info]
         return take_this
@@ -94,7 +93,7 @@ class TestFeladatok(object):
                 transactions.append(Deposit[1])
 
             except:
-                print('LÚf az')
+                print('Upsz...)
 
         # print(transactions)
         return transactions
@@ -116,8 +115,8 @@ class TestFeladatok(object):
         self.browser.maximize_window()
 
     def teardown_method(self):
-        pass
-        # self.browser.quit()
+        # pass
+        self.browser.quit()
 
     """
     TC1: Ellenőrizzük a főoldal főbb elemeinek megjelenését
@@ -133,7 +132,7 @@ class TestFeladatok(object):
     def test_case1(self):
         act_str = WebDriverWait(self.browser, 5).until(
             EC.visibility_of_element_located((By.XPATH, '//div[@class="box mainhdr"]/strong'))).text
-        assert act_str
+        assert act_str == 'XYZ Bank'
         home_btn = self.HomeButton()
         assert home_btn.is_enabled
         login_btns = self.Login_btns()
@@ -208,9 +207,9 @@ class TestFeladatok(object):
         Balance = self.check_balance()
         try:
             assert sum_transactions == int(Balance)
-            print(f'\nEnnyi:{Balance} Nu, csak megvan.')
+            # print(f'\nEnnyi:{Balance}')
         except:
-            print('Mi van a palacsintában?!')
+            print('Upsz...')
 
     # ----------------------------------------------------------------------------------------------------------------------
 
@@ -244,9 +243,9 @@ class TestFeladatok(object):
         try:
             assert (str(Withdrawl[0]) == 'Transaction successful')
             Balance = self.check_balance()
-            print(f'\nEnnyi maradt:{Balance} Ez nem semmi?! De az: 0.')
+            # print(f'\nEnnyi maradt:{Balance} Ez nem semmi?! De az: 0.')
         except:
-            print('Mi van a palacsintában?!')
+            print('Upsz...')
 
     # ----------------------------------------------------------------------------------------------------------------------
 
@@ -288,10 +287,10 @@ class TestFeladatok(object):
         # print(szlakciok[0].text)
 
         for t in range(len(transactions)):
-            print(f'{transactions[t]} Vs. {szlakciok[t + 1].text}')
+            # print(f'{transactions[t]} Vs. {szlakciok[t + 1].text}')
 
             try:
                 assert transactions[t] == int(szlakciok[t + 1].text)
-                print('Megvagy...b+ !')
+                # print('Ohbejó! :)')
             except:
-                print('Lehullik a kúltúra könnyű fátyla, ha beütt a krach...')
+                print('Upsz...')
