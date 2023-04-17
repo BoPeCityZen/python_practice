@@ -14,33 +14,7 @@ from selenium.webdriver.support.ui import Select
 
 
 class TestFeladat1(object):
-    def fill_form(self, mail: str):
-        selector=Select(WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_totalGuests'))))
-        selector.select_by_value('1')
-        #btn1
-        WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.XPATH, '//button[@class="next-btn next-btn1"]'))).click()
-        #bf_date
-
-        WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_date'))).send_keys('VALAMI')
-        selector2 = Select(WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_time'))))
-        selector2.select_by_value('Morning')
-        selector3 = Select(WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_hours'))))
-        selector3.select_by_value('3')
-        # btn2
-        WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//button[@class="next-btn next-btn2"]'))).click()
-        WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_fullname'))).send_keys('John Doo')
-        WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_email'))).send_keys(mail)
-        WebDriverWait(self.browser, 5).until(
-            EC.presence_of_element_located((By.NAME, 'bf_message'))).send_keys('Nincs speciális kérés')
-        #btn submit
-        WebDriverWait(self.browser, 5).until(EC.presence_of_element_located((By.XPATH, '//button[@class="submit-btn"]'))).click()
+   
 
     def setup_method(self):
         service = Service(executable_path=ChromeDriverManager().install())
